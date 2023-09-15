@@ -12,6 +12,24 @@
                
 <hr/>
 
+## 安装
+### Maven
+```xml
+<dependency>
+    <groupId>io.github.vwenx</groupId>
+    <artifactId>wen-common</artifactId>
+    <version>${version}</version>
+</dependency>
+```
+- 对其他服务提供接口/实体声明的`api`包建议依赖`wen-common-bean`，更轻量
+```xml
+<dependency>
+    <groupId>io.github.vwenx</groupId>
+    <artifactId>wen-common-bean</artifactId>
+    <version>${version}</version>
+</dependency>
+```
+
 ## 组件
 
 ### [FieldFill](wen-common%2Fsrc%2Fmain%2Fjava%2Fio%2Fgithub%2Fvwenx%2Fcommon%2Ffieldfill) 字段填充工具
@@ -47,9 +65,9 @@
 - 可自由集成到拦截器/AOP，业务开发只需要在字段中定义注解，就能自动完成字段填充，保持主逻辑代码的干净。
 
 ##### 提示
-- 源码注释还是很清晰的，测试包里的示例也很简洁且完整。
+- 源码注释还是很清晰的，测试包里的示例也很简洁且完整，文档未提及的可以查看注释。
 - 填充助手会按类型，将同类任务聚合一次交给填充器，填充实现可以使用批量查询来优化时间。(如: 数据库查询、服务调用等RPC场景)
-- 如实体继承中重复定义了同名字段，解析器会选择抛出异常。
 - 涉及对象嵌套的数据结构，只有在字段上定义了`@ScanFieldFill`注解，才会向下一层去扫描填充信息。
+- 如实体继承中重复定义了同名字段，解析器会选择抛出异常。
 
 <hr/>
