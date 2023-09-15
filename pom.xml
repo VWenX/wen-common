@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.vwenx</groupId>
+        <artifactId>wen-plugin-parent</artifactId>
+        <version>1.0.0</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>wen-common-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>wen-common</name>
+    <description>一个JAVA的公共工具包</description>
+    <url>https://gitee.com/VwenX/wen-common</url>
+
+    <modules>
+        <module>wen-common-bean</module>
+        <module>wen-common</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.vwenx</groupId>
+                <artifactId>wen-common-bean</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.vwenx</groupId>
+                <artifactId>wen-common</artifactId>
+                <version>${version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
