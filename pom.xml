@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>io.github.vwenx</groupId>
-        <artifactId>wen-plugin-parent</artifactId>
+        <artifactId>wen-parent</artifactId>
         <version>1.0.0</version>
         <relativePath/>
     </parent>
@@ -15,8 +15,8 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>wen-common</name>
-    <description>一个JAVA的公共工具包</description>
+    <name>wen-common-parent</name>
+    <description>JAVA公共工具包</description>
     <url>https://gitee.com/VwenX/wen-common</url>
 
     <modules>
