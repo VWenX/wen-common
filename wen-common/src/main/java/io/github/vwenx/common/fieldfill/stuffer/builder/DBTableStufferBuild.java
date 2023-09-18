@@ -10,11 +10,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * 基于数据库自定义表、字段查询转换的填充器构建
- * 注意： 此Class只实现任务处理框架，查询实现请使用构造方法传入
- * 示例：
- *   假设要使用的查询实现为 demoService 实例下的 Map<Long, String> queryTextById(table, source, to, sourceValues)
- *   FieldFillStufferRegistry.register(FieldFillType.Table, DBTableStufferBuild.of(demoService::queryTextById));
+ * 基于数据库自定义表、字段查询转换的填充器构建<br>
+ * 注意： 此Class只实现任务处理框架，查询实现请使用构造方法传入<br>
+ * 示例：<br>
+ *   假设要使用的查询实现为 demoService 实例下的 Map&lt;Long, String&gt; queryTextById(table, source, to, sourceValues)<br>
+ *   FieldFillStufferRegistry.register(FieldFillType.Table, DBTableStufferBuild.of(demoService::queryTextById));<br>
  *
  * @author XuWen
  */
@@ -32,6 +32,7 @@ public final class DBTableStufferBuild implements FieldFillStuffer {
     /**
      * 构造基于数据表的填充器
      * @param queryFunction 查询实现
+     * @return 填充器实例
      */
     public static FieldFillStuffer of(QueryFunction<?, ?> queryFunction) {
         return new DBTableStufferBuild(queryFunction);

@@ -44,7 +44,7 @@ public class Defer {
         }
     }
 
-    /**
+    /*
      * 示例：
      *   lockObj = getLock();
      *   Defer.defer(
@@ -62,7 +62,7 @@ public class Defer {
         }
     }
 
-    /**
+    /*
      * 示例：
      *   Defer.defer(
      *     () -> { return genLockedObj(); },

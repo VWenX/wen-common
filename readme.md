@@ -21,7 +21,7 @@
     <version>${version}</version>
 </dependency>
 ```
-- 对其他服务提供接口/实体声明的`api`包建议依赖`wen-common-bean`，更轻量
+- 对其他服务提供接口/实体声明的`api`包建议只依赖`wen-common-bean`，更轻量
 ```xml
 <dependency>
     <groupId>io.github.vwenx</groupId>
@@ -34,6 +34,8 @@
 
 ### [FieldFill](wen-common%2Fsrc%2Fmain%2Fjava%2Fio%2Fgithub%2Fvwenx%2Fcommon%2Ffieldfill) 字段填充工具
 - 通过在实体字段上注解声明的规则，来处理字段的自动赋值。避免为了额外返回个别字段去写连表、穿插调用服务/转换枚举的代码。
+- 可扩展的填充器设计，自由处理字段值的转换、填充，调用服务查询、逻辑处理...都可以。
+- 基于原生字段填充，并非通过JSON序列化做手脚，接口文档友好，后端也能使用字段。
 - 常用场景：
   - 关联信息 如:用户的创建人字段存的是创建人的用户id，还需要给前端返回创建人的名称
   - 枚举信息 如:用户的性别、字典code与文本的映射 (虽然没有BFF层的后端不该做这些)

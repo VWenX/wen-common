@@ -18,7 +18,10 @@ public class FieldFillTest {
     public static void main(String[] args) {
 
         // 注册填充器
-        FieldFillStufferRegistry.register(FieldFillTypes.User_idToName, BatchModeStufferBuilder.of(service::getNameByIds));
+        FieldFillStufferRegistry.register(
+                FieldFillTypes.User_idToName,
+                BatchModeStufferBuilder.of(service::getNameByIds)
+        );
 
         // 构造模拟数据
         User user = new User();

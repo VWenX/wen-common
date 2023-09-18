@@ -9,7 +9,7 @@ import java.util.function.Function;
 
 /**
  * 树结构处理工具
- *    集合->树、树->集合、树->树
+ *    集合-》树、树-》集合、树-》树
  *
  * @author XuWen
  */

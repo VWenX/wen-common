@@ -6,11 +6,11 @@ import java.util.function.Supplier;
 
 /**
  * 处理器池
- *   针对可复用但非线程安全的处理器实例提供优化（如：DateTimeFormatter）<br/>
- *   创建时定义处理器的提供实现，当需要处理器时将自动调用提供实现获取。<br/>
- *     如：()->DateTimeFormatter.ofPattern("yyyy-MM-dd")<br/>
- *   定义的池大小是持久池的容量，并不代表同时存在处理器的上限。<br/>
- *     如实例数已达到池大小但无可用实例，仍会创建新实例。交还给池时超出池大小的实例将被丢弃。<br/>
+ *   针对可复用但非线程安全的处理器实例提供优化（如：DateTimeFormatter）<br>
+ *   创建时定义处理器的提供实现，当需要处理器时将自动调用提供实现获取。<br>
+ *     如：()-&gt;DateTimeFormatter.ofPattern("yyyy-MM-dd")<br>
+ *   定义的池大小是持久池的容量，并不代表同时存在处理器的上限。<br>
+ *     如实例数已达到池大小但无可用实例，仍会创建新实例。交还给池时超出池大小的实例将被丢弃。<br>
  *
  * @author XuWen
  */
@@ -33,6 +33,7 @@ public class ProcessorPool<T, R> {
     /**
      * 执行处理
      * @param handler 处理实现(将传入一个处理器)
+     * @return 处理结果
      */
     public R process(Function<T, R> handler){
         T poll = null;
@@ -46,7 +47,7 @@ public class ProcessorPool<T, R> {
         }
     }
 
-    /**
+    /*
      * 获取可用实例
      */
     protected T getInstance(){
